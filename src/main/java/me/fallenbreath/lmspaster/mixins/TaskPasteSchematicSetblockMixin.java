@@ -47,10 +47,6 @@ public abstract class TaskPasteSchematicSetblockMixin extends TaskPasteSchematic
 		if (command.startsWith(CUSTOM_COMMAND_PREFIX))
 		{
 			command = command.substring(CUSTOM_COMMAND_PREFIX.length());
-			if (command.charAt(0) != '/')
-			{
-				command = '/' + command;
-			}
 			ClientNetworkHandler.sendCommand(command);
 		}
 		else
@@ -105,7 +101,7 @@ public abstract class TaskPasteSchematicSetblockMixin extends TaskPasteSchematic
 				tag.remove("y");
 				tag.remove("z");
 				String tagString = tag.toString();
-				String command = String.format("/%s %s %s %s %s%s", cmdName, x, y, z, stateString, tagString);
+				String command = String.format("%s %s %s %s %s%s", cmdName, x, y, z, stateString, tagString);
 				if (ClientNetworkHandler.canSendCommand(command))
 				{
 					LitematicaServerPasterMod.LOGGER.info("Pasting block {} at [{}, {}, {}] with nbt tag", state.getBlock().getName().getString(), x, y, z);

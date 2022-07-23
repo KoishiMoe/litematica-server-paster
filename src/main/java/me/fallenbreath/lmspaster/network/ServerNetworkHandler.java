@@ -26,9 +26,9 @@ public class ServerNetworkHandler
 			case Network.C2S.CHAT:
 				LitematicaServerPasterMod.LOGGER.debug("Received chat from player {}", playerName);
 				String message = data.readString(Short.MAX_VALUE);
-				if (message.isEmpty() || message.charAt(0) != '/')
+				if (message.isEmpty()) // commands in 1.19+ will never have "/" prefix
 				{
-					LitematicaServerPasterMod.LOGGER.warn("Player {} sent a non-command chat message with length {}", playerName, message.length());
+					LitematicaServerPasterMod.LOGGER.warn("Player {} sent an empty command", playerName);
 				}
 				else
 				{
