@@ -1,3 +1,5 @@
+## The upstream has already updated to 1.19.1, so this fork will be archived. Use the official one instead.
+
 # Litematica Server Paster
 
 [![Modrinth](https://img.shields.io/modrinth/dt/HCbarMw6?label=Modrinth%20Downloads)](https://modrinth.com/mod/litematica-server-paster)
